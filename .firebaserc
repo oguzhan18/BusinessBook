@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "BusinessBook-28e8b": {
+      "hosting": {
+        "BusinessBook": [
+          "BusinessBook-28e8b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "BusinessBook-28e8b"
+  }
+}

@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  mat-drawer {
+    width: 200px;
+  }
+  
+  mat-drawer-container {
+    height: 100%;
+  }
+  
+  mat-drawer-content {
+    padding: 2rem;
+  }
+
+  li { 
+      list-style: none;
+  }
+  /* .nav-title{
+    color: rgb(0, 0, 0);
+  } */

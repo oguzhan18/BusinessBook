@@ -1,0 +1,31 @@
+<p>
+  <ngb-alert  *ngIf="alertSucces" type="success" [dismissible]=false ><strong>User successfully added</strong></ngb-alert>
+  <ngb-alert  *ngIf="alertFailed" type="danger" [dismissible]=false ><strong>Enter User Name</strong></ngb-alert>
+</p>
+<form [formGroup]="addMaterialForm" (ngSubmit)="onSubmit()">
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center"><p>
+      <mat-form-field appearance="outline">
+        <mat-label>User Name & Surname</mat-label>
+        <input matInput formControlName="text" placeholder="Name">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+      </p><p>
+      <mat-form-field appearance="outline">
+        <mat-label>Statu:</mat-label>
+        <input matInput formControlName="price" placeholder="Price">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field></p><p>
+      <mat-form-field appearance="outline">
+        <mat-label>Department:</mat-label>
+        <input matInput formControlName="quantity" placeholder="Quantity">
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+    </p>
+ 
+  </div>
+  <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+  <p>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!addMaterialForm.valid">Add User</button>
+</p>
+</div>
+</form>

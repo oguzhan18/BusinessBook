@@ -1,0 +1,60 @@
+<form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Job Name</mat-label>
+        <input matInput formControlName="title" placeholder="">
+        <mat-error>Jon Name Invalid</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>To Do Person</mat-label>
+        <input matInput formControlName="client" placeholder="">
+        <mat-error>To Do Person Invalid </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Transaction Status</mat-label>
+        <input matInput formControlName="location" placeholder="">
+        <mat-error>Transaction Status Invalid</mat-error>
+      </mat-form-field>
+    </p>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput type="date" formControlName="date" placeholder="">
+        <mat-error>This field is required</mat-error>
+
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let type of statusType" value="{{type}}">
+            {{type}}
+          </mat-option>
+
+        </mat-select>
+        <mat-error>This field is requiredr</mat-error>
+      </mat-form-field>
+    </p>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <h3>Description</h3>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <angular-editor [config]="config" formControlName="description"></angular-editor>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center">
+    <button style="margin-top:20px;" type="submit" mat-raised-button color="primary"
+      [disabled]="!addProjectForm.valid">Saved</button>
+  </div>
+</form>
+<br><br>
+<mat-divider></mat-divider>
+<br><br>

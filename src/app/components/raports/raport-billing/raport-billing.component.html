@@ -1,0 +1,32 @@
+
+<div class="container mat-elevation-z5">
+    <h2 [ngStyle]="{color: '#3f51b5'}" >Invoices</h2>
+    <div *ngIf="raportDetail" >
+        <div *ngFor="let raportDetail of raportDetail">
+            <div *ngIf="!raportDetail.bill">
+                <mat-accordion class="example-headers-align">   
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               <p>{{raportDetail?.projectAndClient | uppercase}}</p>
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <span><em>{{raportDetail?.date | date}}</em></span>                          
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <strong>Description</strong>
+                        <p innerHTML="{{raportDetail?.description}}"></p>
+                        <strong>User:</strong>
+                        <ul>
+                            <li *ngFor="let material of raportDetail?.materialsQuantity">+ : {{material.quantity}}</li>
+                          </ul>
+                          <mat-action-row>
+                            <button mat-button color="primary" (click)="markAsFinsihed(raportDetail)"> <mat-icon>delete</mat-icon> Delete</button>
+                          </mat-action-row>
+                    </mat-expansion-panel>
+            <mat-divider></mat-divider>
+        
+
+
+    
+

@@ -1,0 +1,58 @@
+<div *ngIf="hasRoute('/')">
+<div class="container mat-elevation-z5">
+  
+  <h2 [ngStyle]="{color: '#3f51b5'}">Add Job and Person to Perform the Job.</h2>
+  
+  <table class="table table-bordered table-striped mat-elevation-z5">
+    <thead>
+      <tr>
+        <th scope="col">To Do Person</th>
+        <th scope="col">Job Creator</th>
+        <th scope="col">Date</th>
+        <th scope="col">Job</th>
+        <th scope="col">Process</th>
+        <th scope="col">Aksiyon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of requests" >
+        <td >{{request?.client}}</td>
+        <td>{{request?.address}}</td>
+        <td>{{request?.date | date}} </td>
+        <td>{{request?.problem}}</td>
+        <td ><a routerLink="/requests/{{request.id}}">Process</a></td>
+        <td style="text-align:center"> <mat-icon (click)="openDialog(request)" [ngStyle]="{'color': 'red'}" >delete</mat-icon></td>
+          
+          
+        </tr>
+      </tbody>
+    </table>  
+    
+  </div>
+    
+</div>
+
+<div *ngIf="hasRouteDetail('/')">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">To Do Person</th>
+        <th scope="col">Job Creator</th>
+        <th scope="col">Date</th>
+        <th scope="col">Jobs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>{{requestItem?.client}}</td>
+      <td>{{requestItem?.address}}</td>
+      <td>{{requestItem?.date}}</td>
+      <td>{{requestItem?.problem}}</td>
+     
+      
+  </tr>
+    </tbody>
+  </table>  
+<app-add-request-raport [requestId]="requestItem?.id" (onAddRaportRequest)="addRaport($event)"></app-add-request-raport>
+</div>

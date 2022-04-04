@@ -1,0 +1,17 @@
+
+<h2 mat-dialog-title>Are you sure you want to delete the job?</h2>
+<mat-dialog-content class="mat-typography">
+  
+ 
+  <p>To Do Person:</p>
+  <p style="color:red">{{data.request.client}}</p>
+  <p>Job Creator:</p>
+  <p style="color:red">{{data.request.problem}}</p>
+    <p>Date:</p>
+  <p style="color:red">{{data.request.date}}</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+<button mat-button  mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close  (click)=deleteRequest(data.request) style="color:red">   <mat-icon>delete</mat-icon> Delete</button>
+</mat-dialog-actions>

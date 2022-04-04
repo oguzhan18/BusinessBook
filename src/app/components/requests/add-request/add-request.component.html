@@ -1,0 +1,36 @@
+<h2 [ngStyle]="{color: '#3f51b5'}">Add Job Panel</h2>
+<form [formGroup]="addRequestForm" (ngSubmit)="onSubmit()" >
+    <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>To Do Person</mat-label>
+            <input matInput formControlName="client" placeholder="">
+            <mat-error>To Do Person invalid</mat-error>
+          </mat-form-field>
+          </p><p>
+          <mat-form-field appearance="outline">
+            <mat-label>Job Creator:</mat-label>
+            <input matInput formControlName="address" placeholder="">
+            <mat-error>Job Creator invalid</mat-error>
+          </mat-form-field></p><p>
+          <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input matInput type="date" formControlName="date" placeholder="">
+            <mat-error>Date invalid</mat-error>
+          </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Jobs</mat-label>
+              <input matInput type="text" formControlName="problem" placeholder="">
+              <mat-error>Jobs invalid</mat-error>
+            </mat-form-field>
+          </p>
+     
+      </div>
+
+      <div  fxLayout="row" fxLayoutAlign="space-evenly center">
+        <button type="submit" mat-raised-button color="primary" [disabled]="!addRequestForm.valid">Save</button>
+  
+    </div>
+</form>

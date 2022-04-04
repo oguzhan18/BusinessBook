@@ -1,0 +1,46 @@
+<div class="container mat-elevation-z5">
+  <app-add-material (onAddMaterial)="addMaterialtoFireBase($event)"></app-add-material>
+  <mat-divider></mat-divider>
+  <form class="form-group margin-top">
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label> <mat-icon>search</mat-icon> Search</mat-label>
+        <input matInput [(ngModel)]="materialName" [ngModelOptions]="{standalone: true}" placeholder="ex: CABLU UTP">
+      </mat-form-field>
+    </p>
+    <p>
+  </form>
+
+  <table class="table table-striped table-bordered mat-elevation-z5">
+    <thead>
+      <tr>
+        <th scope="col">User Name & Surname</th>
+        <th scope="col">Statu</th>
+        <th scope="col">Department</th>
+        <th scope="col">Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let material of materials | materialSearch : materialName">
+        <td *ngIf="!editMode || !compareId(material.id,editId)">{{material?.text | uppercase}}</td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input class="green" matInput  type="text" [(ngModel)]="material.text"></td>
+        <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.price}}</td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input class="green" matInput size=5 type="text" [(ngModel)]="material.price"></td>
+        <td *ngIf="!editMode || !compareId(material.id,editId)" >{{material?.quantity}}</td>
+        <td *ngIf="editMode && compareId(material.id,editId)"><input class="green" matInput size=5 type="text" [(ngModel)]="material.quantity"></td>
+        <td class="saveEdit">
+          <mat-icon *ngIf="!editMode || !compareId(material.id,editId)" (click)="enterEditMode(material.id)" class="green"   matTooltip="Info about the action">edit</mat-icon>
+          <mat-icon *ngIf="editMode && compareId(material.id,editId)" (click)="exitEditMode(material)" title="Kayıt Et" class="green">save</mat-icon>
+          <mat-icon (click)="openDialog(material)" class="red">delete</mat-icon>
+        </td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+
+
+
+</div>

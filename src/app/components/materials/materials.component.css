@@ -1,0 +1,16 @@
+.margin-top {
+    margin-top:16px;
+}
+
+.saveEdit {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.green {
+    color:green;
+}
+.red {
+    color:red;
+}
+

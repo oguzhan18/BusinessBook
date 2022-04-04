@@ -1,0 +1,54 @@
+.material {
+    background: #f4f4f4;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .material.reminder {
+    border-left: 5px solid green;
+  }
+  
+  .material h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+mat-panel-title {
+  padding-top: 20px;
+  display: flex;
+ 
+}
+
+
+
+
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

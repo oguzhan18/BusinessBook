@@ -1,0 +1,26 @@
+<div class="form-container mat-elevation-z10">
+    <h1>Portal Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="email?.errors?.['required']">
+                You need to fill this field !!!
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Email format did not match !!!
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Parola" formControlName="password" type="password">
+            <mat-error *ngIf="password?.errors?.['required']">
+                You need to fill this field !!!
+            </mat-error>
+        </mat-form-field>
+        <div class="center margin-top">
+            <button mat-raised-button color="primary" type="submit">
+                Login
+            </button>
+        </div>
+    </form>
+</div>

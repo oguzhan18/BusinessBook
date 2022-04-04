@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row> 
+        <mat-icon>location_city</mat-icon>   <h1 class="nav-title"> {{title}}</h1>
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="20px" *ngIf="isLoggedIn()">
+               
+                <li>
+                    <button mat-button (click)="logout()">
+                        <mat-icon>person_outline</mat-icon> Sign Out
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="true" *ngIf="isLoggedIn()">
+        <app-header></app-header>
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+        
+    </mat-drawer-content>
+   
+</mat-drawer-container>

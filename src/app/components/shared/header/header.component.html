@@ -1,0 +1,19 @@
+
+
+<mat-nav-list>
+
+  <h2 style="color: rgb(63 81 181); text-align: center; margin-left:20%" matSubheader>{{ dateVal | date: 'shortDate' }}</h2>
+  <mat-divider></mat-divider>
+  <a mat-list-item  routerLink=""> All Transactions</a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="materials">User</a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="projects">Works</a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="billing" ><span matBadge="{{raportDetail.length}}" matBadgeOverlap="false">Invoices</span></a>
+  <mat-divider></mat-divider>
+  <!-- <mat-divider></mat-divider> -->
+  <button mat-button (click)="logout()" class="SignOut">
+    <mat-icon>person_outline</mat-icon> Sign Out
+</button>
+
+
+
+</mat-nav-list>

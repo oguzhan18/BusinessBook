@@ -1,0 +1,21 @@
+<div class="container mat-elevation-z5">
+  <h2 [ngStyle]="{color: '#3f51b5'}" >Add Job</h2>
+  <app-add-project (onAddProject)="addProject($event)"></app-add-project>
+  <form class="form-group margin-top">
+ 
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Search<mat-icon>search</mat-icon></mat-label>
+        <input matInput [(ngModel)]="projectName" [ngModelOptions]="{standalone: true}" placeholder="ex: Nume Client">
+      </mat-form-field>
+      </p><p>
+  </form>
+  <h2 [ngStyle]="{color: '#3f51b5'}" >Detailed Business Process</h2>
+
+  <div *ngFor="let project of projects | projectSearch: projectName" class="container mat-elevation-z5">
+
+    <a routerLink="/project/{{project?.id}}">
+      <app-project-detail [project]="project"></app-project-detail>
+    </a>
+  </div>
+</div>

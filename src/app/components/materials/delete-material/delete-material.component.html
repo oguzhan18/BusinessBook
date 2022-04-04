@@ -1,0 +1,16 @@
+<h2 mat-dialog-title><mat-icon>delete</mat-icon> Are you sure you want to delete the product?</h2>
+<mat-dialog-content class="mat-typography">
+
+
+  <p>Product:</p>
+  <p class="red">{{data.material.text}}</p>
+  <p>Price:</p>
+  <p class="red">{{data.material.price}}</p>
+  <p>Quantity:</p>
+  <p class="red">{{data.material.quantity}}</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button class="red" mat-button mat-dialog-close (click)=deleteMaterialFromFirebBase(data.material)><mat-icon>delete</mat-icon>Delete</button>
+</mat-dialog-actions>

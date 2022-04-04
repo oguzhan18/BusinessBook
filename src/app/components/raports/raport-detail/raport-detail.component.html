@@ -1,0 +1,31 @@
+ <div *ngIf="raportDetail">
+  <div *ngFor="let raportDetail of raportDetail">
+    <mat-card>
+      <mat-card-title [ngStyle]="{color: '#3f51b5'}" >{{raportDetail.date | date}}
+      </mat-card-title>
+      <mat-card-subtitle>
+       Team : {{raportDetail.team}}
+      </mat-card-subtitle>
+      <mat-card-content>
+        <div class="row">
+          <div class="column">
+            <h3><strong>User:</strong></h3>
+            <ul>
+              <li *ngFor="let material of raportDetail?.materialsQuantity">{{material.text}} : {{material.quantity}}m</li>
+            </ul>
+            <span>Status: </span>
+            <span *ngIf="raportDetail.bill" [ngStyle]="{color: 'green'}">checked</span>
+            <span *ngIf="!raportDetail.bill" [ngStyle]="{color: 'red'}">billing</span>
+          </div>
+          <div class="column">
+            <h3 [ngStyle]="{color: '#3f51b5'}">Description</h3>
+            <p innerHTML="{{raportDetail?.description}}"></p>
+          </div>
+        </div>
+      </mat-card-content>    
+    </mat-card>
+    <mat-divider [inset]="true"></mat-divider>
+  <br><br>
+  </div>
+</div> 
+
